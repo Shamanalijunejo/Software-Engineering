@@ -1,0 +1,35 @@
+<project name="RectangleProgram" default="run" basedir=".">
+    <description>
+        A simple Ant build file for compiling and running the Rectangle program.
+    </description>
+
+    <!-- Set the source directory -->
+    <property name="src.dir" value="src" />
+
+    <!-- Set the build directory -->
+    <property name="build.dir" value="build" />
+
+    <!-- Set the main class -->
+    <property name="main.class" value="Main" />
+
+    <!-- Define the classpath -->
+    <path id="classpath">
+        <pathelement location="${build.dir}" />
+    </path>
+
+    <!-- Clean task -->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <!-- Compile task -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}" />
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" />
+    </target>
+
+    <!-- Run task -->
+    <target name="run" depends="compile">
+        <java classname="${main.class}" classpathref="classpath" />
+    </target>
+</project>
