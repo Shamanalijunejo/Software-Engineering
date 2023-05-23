@@ -26,5 +26,7 @@ class Main {
 
         System.out.println("Rectangle Area: " + area);
         System.out.println("Rectangle Perimeter: " + perimeter);
+
+        System.out.println("This project is done by Iqra Arain and Shaman Ali Junejo");
     }
 }
